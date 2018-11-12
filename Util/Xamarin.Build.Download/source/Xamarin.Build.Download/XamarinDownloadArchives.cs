@@ -136,7 +136,7 @@ namespace Xamarin.Build.Download
 				return false;
 			}
 
-			var lockFile = xbd.DestinationDir + ".locked";
+			var lockFile = xbd.DestinationDir + ".blocked";
 			using (var lockStream = DownloadUtils.ObtainExclusiveFileLock (lockFile, Token, TimeSpan.FromSeconds (xbd.ExclusiveLockTimeout), this)) {
 
 				if (lockStream == null) {
